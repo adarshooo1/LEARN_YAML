@@ -1,0 +1,113 @@
+# Advance Datatype in YAML:
+# List Representation Type Block 
+
+student : !!seq
+ - marks
+ - name
+ - roll_no
+ - address 
+--- 
+# Same 
+# List Representation Type Flow 
+ student2 : [marks , name , roll_no , address]
+
+#  some of the keys of the sequence will be empty sparse sequence
+ sparse seq: 
+  - hey
+  - how
+  - hello
+  - Hi
+  - Null
+  - 23
+---
+# Yaml Nested Sequence  v/s    #Json Nested
+                        
+#  -                       | [
+#  - mango                 |   [
+#  - apple                 |    "mango",
+#  - banana                |    "apple",
+# -                        |    "banana",
+#  - marks                 |   ],
+#  - roll                  |   [
+#  - date                  |    "marks",
+#                          |    "roll",
+#                          |    ]
+#                          |  ]   
+
+# Key Value Pairs (FLow Mapping)
+{ Name : "Adarsh Singh" , age : 21 }
+---
+# Block Mapping
+person:
+  name: John Doe
+  age: 30
+  occupation: Developer# Mapping
+---
+# Flow Mapping
+person: {name: John Doe, age: 30, occupation: Developer}
+
+# Nested Mapping
+name : Adarsh Singh
+role : 
+  age : 78
+  student : yes
+---
+{name : Adarsh Singh, 
+role : {age : 78, student : yes}}
+---
+#This will be an array hash tables
+pairExample : !!pairs
+ - job : student
+ - job : teacher
+
+#  same as
+pairExample2 : !!pairs [job : student, job : teacher]
+---
+# !! Set will allow you to have unique values:
+names : !!set
+ ? Adarsh
+ ? Anku
+ ? Deepu
+
+# Dictionary : !!omap
+
+people : !!omap
+ - Adarsh:
+    name : Adarsh Singh
+    age : 21
+    height : 176
+ - Deepanshu :
+    name : Deepanshu Chauhan  
+    age : 22
+    height : 180
+
+# Reusing some properties anchors
+Linking : &likes
+ fav fruit : mango
+ dislikes : grapes
+
+Person1 : 
+  name : Adarsh
+  fav fruit : mango
+  dislikes : grapes 
+
+person2 : 
+ name : Anku
+ <<: *likes
+
+#  <<: *likes will take the liking to the person2 body.
+#  fav fruit : mango
+#  dislikes : grapes
+
+person3 : 
+ name : Deepu
+ <<: *likes
+ dislikes : Pomegranate #Over ride.
+
+# person 3 will look like this:
+person4 : 
+ name : Deepu
+ fav fruit : mango
+ dislikes : Pomegranate
+
+...

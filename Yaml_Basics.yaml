@@ -1,0 +1,176 @@
+# String Representation;
+'apple' : "A sweet red fruit"
+1 : "A number in Maths"
+
+--- # This is a separator which tells yaml that it is different document 
+
+# Lists (BLock List)
+- apple
+- mango
+- banana
+- delhi
+
+---
+
+# List Representation type 1: (Block Sequence)
+cities :
+ - new delhi
+ - noida
+ - danapurD
+#  Kind of array representation;
+---
+
+# List Representation type 2: (Flow Sequence)
+school : [Surbhi , NGLPS , Jagran] 
+#  Kind of array representation;
+
+---
+
+# Key Value Pairs (FLow Mapping)
+{ Name : "Adarsh Singh" , age : 21 }
+
+---
+
+# Block Mapping
+person:
+  name: John Doe
+  age: 30
+  occupation: Developer# Mapping
+  ~ : null # ~ represent null
+
+# Flow Mapping
+person2: {name: John Doe, age: 30, occupation: Developer}
+# ... # This is a end statement
+
+# Data Types
+# string Variable In 3 types we can present in Yaml file.
+myself: Adarsh Singh
+fruit : "Apple"
+job : 'swe'
+
+# Define String :
+
+line : !!str some line print null
+
+# String with multiple line
+bio2 : |
+  I am adarsh
+  I am nice man
+  I am very honest
+  I am gentle.
+
+# String looks like multiple in line by its actually a single line;
+bio3 : >
+  I am adarsh
+  I am nice man
+  I am very honest
+  I am gentle.
+
+
+# which is same as:
+bio4 : I am adarsh I am nice man I am very honest I am gentle.
+
+# Number:
+hii : 2002
+number : 11
+
+# Float:
+omg : 1.01
+float : 1001.99
+
+# Exponential:
+expo : 12.09E12 # 12.09E12 is equivalent to 12.09 * 10^12.
+
+# Boolean
+tFor : true
+f : false
+
+# In YAML, boolean values can be represented in several ways. Here are some common ways to declare boolean values in YAML:
+# Using true and false:
+isTrue: true
+isFalse: false
+
+# Using on and off:
+isEnabled: on
+isDisabled: off
+isEnabled2: On
+isDisabled2: Off
+isEnabled3: ON
+isDisabled3: OFF
+
+# Using yes and no:
+affirm: yes
+negate: no
+
+# Using y and n:
+affirmShort: y
+negateShort: n
+affirmShort2`: Y
+negateShort2: N
+
+# Using 1 and 0:
+binaryTrue: 1
+binaryFalse: 0
+
+# Define boolean;
+hey_bool: !!bool false
+why_not: !!bool true
+
+# Specify the datatype;
+SupposeNumber : !!int 10
+negNumber : !!int -109
+
+# Prefix the binary number with 0b to indicate that it is in binary format.
+binaryNumber: 0b11001
+
+# Prefix the octal number with 0o to indicate that it is in octal format.
+octalNumber: !!int 0o7343
+
+# Prefix the hexadecimal number with 0x to indicate that it is in hexadecimal 
+hexaDecimalNumber : !!int 0x7343
+
+# Floating point numbers:
+marks : !!float 43.33
+infiniteFloat: .inf
+not a number : .nan #not a number
+
+# Defining null values -> NULL | Null | ~:
+surname : !!null null
+
+#  Date and Time 
+# ISO 8601 Format:  International Organization for Standardization
+date: 2023-11-23
+time: 12:30:45
+datetime: 2023-11-23T12:30:45 +5:30 #+5:30 represents a time zone offset. +5:30 indicates that the time is 5 hours and 30 minutes ahead of UTC.
+
+# RFC 3339 Format: Request for comments
+date2: 2023-11-23
+time2: 12:30:45Z #Here Z in last represent : Coordinated Universal Time (UTC). The "Z" stands for "Zulu time," which is another term for UTC in the context of timekeeping and aviation.
+datetime2: 2023-11-23T12:30:45Z # Here T stands for Time.
+
+# Extended Date/Time Format:
+date3: !!timestamp '2023-11-23'
+time3: 12:30:45
+datetime3: !!timestamp '2023-11-23T12:30:45'
+
+# Inherited Types:
+date4: !!timestamp '2023-11-23'
+time4: '12:30:45'
+datetime4: !!timestamp '2023-11-23 12:30:45'
+
+# Plain Scalars:
+date5: 2023-11-23
+time5: 12:30:45
+datetime5: 2023-11-23 12:30:45
+
+# Explicit Type Tags:
+date6: !!str '2023-11-23'
+time6: !!str '12:30:45'
+datetime6: !!str '2023-11-23 12:30:45'
+...
+
+#  Note:
+# Indentation is Mandatory
+# ---  : separator 
+# ...  : end statement;
+

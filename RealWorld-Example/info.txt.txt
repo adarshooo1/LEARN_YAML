@@ -1,0 +1,5 @@
+In this School Example:
+We will try to implement this in form of code in different Markup Language. 
+Example : XML, JSON, YAML
+
+So, Code will be in school.json, school.xml & school.yaml

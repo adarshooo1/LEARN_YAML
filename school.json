@@ -1,0 +1,24 @@
+{
+  "School": [
+    {
+      "name": "DPS",
+      "principle": "Adarsh",
+      "Students": [
+        {
+          "Students": {
+            "R.No": 21,
+            "name": "Adarsh",
+            "Marks": 90
+          }
+        },
+        {
+          "Students2": {
+            "R.No": 12,
+            "name": "Singh",
+            "Marks": 99
+          }
+        }
+      ]
+    }
+  ]
+}
